@@ -9,6 +9,11 @@ boy = load_image('character.png')
 
 def run_circle():
     print('CIRCLE')
+
+    r = 300
+
+    for degree in range(0,360, 5):
+        
     clear_canvas_now()
     character.draw_now(400,300)
     delay(0.1)
