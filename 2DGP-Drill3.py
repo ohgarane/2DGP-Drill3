@@ -13,13 +13,12 @@ def draw_boy(x,y):
 
 def run_circle():
     print('CIRCLE')
-
     r,cx, cy = 300, 800//2, 600//2
     for degree in range(0,360, 3):
         theta = math.radians(degree)
         x = r * math.cos(theta) + cx
         y = r * math.sin(theta) + cy
-        draw_boy(cx, cy)
+        draw_boy(x, y)
     pass
 
 def run_top():
@@ -53,10 +52,32 @@ def run_rectangle():
 
     
     pass
+def run_triangle():
+    print('TRIANGLE')
+    x1, y1 = 400, 550
+    x2, y2 = 200, 50
+    x3, y3 = 600, 50
+
+    for i in range(0, 100, 5):
+        t = i/100
+        x = (1-t) * x1 + t * x2
+        y = (1-t) * y1 + t * y2
+        draw_boy(x,y)
+    for i in range(0, 100, 5):
+        t = i / 100
+        x = (1 - t) * x2 + t * x3
+        y = (1 - t) * y2 + t * y3
+        draw_boy(x, y)
+    for i in range(0, 100, 5):
+        t = i / 100
+        x = (1 - t) * x3 + t * x1
+        y = (1 - t) * y3 + t * y1
+        draw_boy(x, y)
 
 while True:
     run_rectangle()
     run_circle()
+    run_triangle()
     break
 
 close_canvas()
